@@ -27,22 +27,29 @@ import logic.ShipPane;
 
 public class GuiController {
 	private static HBox root;
-	private static AudioClip click, congratulations, welcome, gameSound;
+	private static AudioClip clickSound, congratulationsSound, welcomeSound, gameSound;
 	// private static AudioClip gameSound;
 
+	public static ImageView imageViewCreator(String url, double width, double height) {
+		ImageView imageView = new ImageView(url);
+		imageView.setFitHeight(height);
+		imageView.setFitWidth(width);
+		return imageView;
+	}
+	
 	public static HBox welcome() {
-		AudioClip click = new AudioClip(ClassLoader.getSystemResource("ClickSound.mp3").toString());
-		click.setVolume(0.5);
-		AudioClip congratulations = new AudioClip(ClassLoader.getSystemResource("CongratulationsSound.mp3").toString());
-		congratulations.setVolume(0.5);
-		AudioClip welcome = new AudioClip(ClassLoader.getSystemResource("MenuSound.mp3").toString());
-		welcome.setVolume(1);
+		AudioClip clickSound = new AudioClip(ClassLoader.getSystemResource("ClickSound.mp3").toString());
+		clickSound.setVolume(0.5);
+		AudioClip congratulationsSound = new AudioClip(ClassLoader.getSystemResource("CongratulationsSound.mp3").toString());
+		congratulationsSound.setVolume(0.5);
+		AudioClip welcomeSound = new AudioClip(ClassLoader.getSystemResource("MenuSound.mp3").toString());
+		welcomeSound.setVolume(1);
 		AudioClip gameSound = new AudioClip(ClassLoader.getSystemResource("GameSound.mp3").toString());
 		gameSound.setVolume(1);
 
-		GuiController.click = click;
-		GuiController.congratulations = congratulations;
-		GuiController.welcome = welcome;
+		GuiController.clickSound = clickSound;
+		GuiController.congratulationsSound = congratulationsSound;
+		GuiController.welcomeSound = welcomeSound;
 		GuiController.gameSound = gameSound;
 
 		HBox root = new HBox();
@@ -51,20 +58,21 @@ public class GuiController {
 		return GuiController.root;
 	}
 
-	private static ImageView imageViewCreator(String url, double width, double height) {
-		ImageView imageView = new ImageView(url);
-		imageView.setFitHeight(height);
-		imageView.setFitWidth(width);
-		return imageView;
+	public static HBox welcome2() {
+		root.getChildren().remove(0);
+		initializeWelcomeScene(root);
+		return GuiController.root;
 	}
+
 
 	private static void initializeWelcomeScene(HBox root) {
 		// TODO Auto-generated method stub
-		welcome.stop();
-		congratulations.stop();
+		welcomeSound.stop();
+		congratulationsSound.stop();
+		welcomeSound.play();
 		VBox vBox = new VBox();
 		StackPane stackPane = new StackPane();
-		welcome.play();
+		
 		vBox.setAlignment(Pos.CENTER);
 		vBox.setSpacing(20);
 		vBox.setPadding(new Insets(175, 0, 0, 0));
@@ -74,16 +82,12 @@ public class GuiController {
 		startButton.setGraphic(imageViewCreator("start.png",234,75));
 		startButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
-		startButton.setPrefWidth(234);
-		startButton.setPrefHeight(75);
 
 		Button instructionsButton = new Button();
 		ImageView instructions = imageViewCreator("instructions.png",234,75);
 		instructionsButton.setGraphic(instructions);
 		instructionsButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
-		instructionsButton.setPrefWidth(234);
-		instructionsButton.setPrefHeight(75);
 
 		vBox.getChildren().addAll(startButton, instructionsButton);
 
@@ -92,9 +96,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView start = new ImageView("start2.png");
-				start.setFitHeight(80);
-				start.setFitWidth(250);
+				ImageView start = imageViewCreator("start2.png",250,80);
 				startButton.setGraphic(start);
 			}
 		});
@@ -104,9 +106,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView start = new ImageView("start.png");
-				start.setFitHeight(75);
-				start.setFitWidth(234);
+				ImageView start = imageViewCreator("start.png",234,75);
 				startButton.setGraphic(start);
 			}
 		});
@@ -116,7 +116,7 @@ public class GuiController {
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				initialize();
-				click.play();
+				clickSound.play();
 
 			}
 		});
@@ -126,9 +126,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView instructions = new ImageView("instructions2.png");
-				instructions.setFitHeight(80);
-				instructions.setFitWidth(250);
+				ImageView instructions = imageViewCreator("instructions2.png",250,80);
 				instructionsButton.setGraphic(instructions);
 			}
 		});
@@ -138,9 +136,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView instructions = new ImageView("instructions.png");
-				instructions.setFitHeight(75);
-				instructions.setFitWidth(234);
+				ImageView instructions = imageViewCreator("instructions.png",234,75);
 				instructionsButton.setGraphic(instructions);
 			}
 		});
@@ -151,14 +147,11 @@ public class GuiController {
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				instruction1();
-				click.play();
+				clickSound.play();
 
 			}
 		});
-		Image image = new Image("BG with Title.png");
-		ImageView imageView = new ImageView(image);
-		imageView.setFitHeight(560);
-		imageView.setFitWidth(1200);
+		ImageView imageView = imageViewCreator("BG with Title.png",1200,560);
 
 		stackPane.getChildren().addAll(imageView, vBox);
 		root.setAlignment(Pos.CENTER);
@@ -178,23 +171,21 @@ public class GuiController {
 		hBox.setAlignment(Pos.CENTER);
 		hBox.setPadding(new Insets(10, 0, 0, 180));
 		hBox.setPrefHeight(550);
-
 		hBox.setSpacing(30);
+		
 		ImageView imageView = new ImageView("BG.png");
-		pane.getChildren().add(imageView);
-		pane.getChildren().add(hBox);
+		pane.getChildren().addAll(imageView,hBox);
 
 		root.getChildren().add(pane);
 
 		GameController.setControlPane(controlPane);
 		GameController.setSetupPane(setupPane);
 
-		GuiController.root = root;
-		return root;
+		return GuiController.root;
 	}
 
 	public static HBox changeToWaitScene() {
-		welcome.stop();
+		welcomeSound.stop();
 		gameSound.stop();
 		gameSound.play();
 
@@ -202,21 +193,15 @@ public class GuiController {
 		VBox vBox = new VBox();
 		StackPane waitPane = new StackPane();
 		if (!GameController.isPlayer1()) {
-			ImageView imageView = new ImageView("Player1Turn.png");
-			imageView.setFitHeight(675);
-			imageView.setFitWidth(1200);
+			ImageView imageView = imageViewCreator("Player1Turn.png",1200,675);
 			waitPane.getChildren().add(imageView);
 		} else {
-			ImageView imageView = new ImageView("Player2Turn.png");
-			imageView.setFitHeight(675);
-			imageView.setFitWidth(1200);
+			ImageView imageView = imageViewCreator("Player2Turn.png",1200,675);
 			waitPane.getChildren().add(imageView);
 		}
 
 		Button continueButton = new Button();
-		ImageView continuepic = new ImageView("continue.png");
-		continuepic.setFitWidth(234);
-		continuepic.setFitHeight(75);
+		ImageView continuepic = imageViewCreator("continue.png",234,75);
 		continueButton.setGraphic(continuepic);
 		continueButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -225,7 +210,7 @@ public class GuiController {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				click.play();
+				clickSound.play();
 				// TODO Auto-generated method stub
 				if (GameController.isPlayer1()) {
 					changeToGameScene2();
@@ -241,10 +226,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView continuePic = new ImageView("continue.png");
-				continuePic.setFitHeight(80);
-				continuePic.setFitWidth(250);
-
+				ImageView continuePic = imageViewCreator("continue.png",250,80);
 				continueButton.setGraphic(continuePic);
 			}
 		});
@@ -254,10 +236,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView continuePic = new ImageView("continue.png");
-				continuePic.setFitHeight(75);
-				continuePic.setFitWidth(234);
-
+				ImageView continuePic = imageViewCreator("continue.png",234,75);
 				continueButton.setGraphic(continuePic);
 			}
 		});
@@ -269,7 +248,6 @@ public class GuiController {
 		waitPane.getChildren().add(vBox);
 
 		root.getChildren().add(waitPane);
-		GuiController.root = root;
 		return GuiController.root;
 	}
 
@@ -295,13 +273,8 @@ public class GuiController {
 		vBox1.setSpacing(5);
 		vBox2.setSpacing(5);
 
-		ImageView player1 = new ImageView("Player1.png");
-		player1.setFitHeight(40);
-		player1.setFitWidth(211);
-
-		ImageView player2 = new ImageView("Player2.png");
-		player2.setFitHeight(40);
-		player2.setFitWidth(211);
+		ImageView player1 = imageViewCreator("Player1.png",211,40);
+		ImageView player2 = imageViewCreator("Player2.png",211,40);
 
 		vBox1.getChildren().addAll(player2, playPane2);
 		vBox2.getChildren().addAll(player1, myPane1);
@@ -314,8 +287,6 @@ public class GuiController {
 		pane.getChildren().addAll(imageView, gamePane);
 
 		root.getChildren().add(pane);
-
-		GuiController.root = root;
 
 		return GuiController.root;
 	}
@@ -341,13 +312,8 @@ public class GuiController {
 		vBox1.setSpacing(5);
 		vBox2.setSpacing(5);
 
-		ImageView player1 = new ImageView("Player1.png");
-		player1.setFitHeight(40);
-		player1.setFitWidth(211);
-
-		ImageView player2 = new ImageView("Player2.png");
-		player2.setFitHeight(40);
-		player2.setFitWidth(211);
+		ImageView player1 = imageViewCreator("Player1.png",211,40);
+		ImageView player2 = imageViewCreator("Player2.png",211,40);
 
 		vBox1.getChildren().addAll(player1, playPane1);
 		vBox2.getChildren().addAll(player2, myPane2);
@@ -357,11 +323,8 @@ public class GuiController {
 		gamePane.setSpacing(5);
 		ImageView imageView = new ImageView("BG.png");
 		pane.getChildren().addAll(imageView, gamePane);
-		;
 
 		root.getChildren().addAll(pane);
-
-		GuiController.root = root;
 
 		return GuiController.root;
 
@@ -369,17 +332,15 @@ public class GuiController {
 
 	public static HBox endScene() {
 		gameSound.stop();
-
+		congratulationsSound.play();
+		root.getChildren().remove(0);
+		
 		StackPane stackPane = new StackPane();
 		VBox vBox = new VBox();
 
-		root.getChildren().remove(0);
-
-		congratulations.play();
+	
 		Button endButton = new Button();
-		ImageView endpic = new ImageView("backToMainMenu.png");
-		endpic.setFitWidth(266);
-		endpic.setFitHeight(20);
+		ImageView endpic = imageViewCreator("backToMainMenu.png",266,20);
 		endButton.setGraphic(endpic);
 		endButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -389,9 +350,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView endpic = new ImageView("backToMainMenu.png");
-				endpic.setFitWidth(292);
-				endpic.setFitHeight(22);
+				ImageView endpic = imageViewCreator("backToMainMenu.png",292,22);
 				endButton.setGraphic(endpic);
 			}
 		});
@@ -401,9 +360,7 @@ public class GuiController {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView endpic = new ImageView("backToMainMenu.png");
-				endpic.setFitWidth(266);
-				endpic.setFitHeight(20);
+				ImageView endpic = imageViewCreator("backToMainMenu.png",266,20);
 				endButton.setGraphic(endpic);
 			}
 		});
@@ -422,12 +379,8 @@ public class GuiController {
 		vBox.setPadding(new Insets(0, 0, 70, 370));
 		vBox.getChildren().add(endButton);
 
-		ImageView player1Win = new ImageView("Player1Win.png");
-		ImageView player2Win = new ImageView("Player2Win.png");
-		player1Win.setFitHeight(675);
-		player1Win.setFitWidth(1200);
-		player2Win.setFitHeight(675);
-		player2Win.setFitWidth(1200);
+		ImageView player1Win = imageViewCreator("Player1Win.png",1200,675);
+		ImageView player2Win = imageViewCreator("Player2Win.png",1200,675);
 
 		if (GameController.isPlayer1()) {
 			stackPane.getChildren().add(player1Win);
@@ -438,14 +391,7 @@ public class GuiController {
 		stackPane.getChildren().add(vBox);
 
 		root.getChildren().add(stackPane);
-		GuiController.root = root;
-		return GuiController.root;
-	}
 
-	public static HBox welcome2() {
-		root.getChildren().remove(0);
-		initializeWelcomeScene(root);
-		GuiController.root = root;
 		return GuiController.root;
 	}
 
@@ -456,9 +402,7 @@ public class GuiController {
 		// hBox.setPadding(new Insets(50));
 		StackPane stackPane = new StackPane();
 		Button nextButton = new Button();
-		ImageView nextpic = new ImageView("right.png");
-		nextpic.setFitWidth(54);
-		nextpic.setFitHeight(40);
+		ImageView nextpic = imageViewCreator("right.png",54,40);
 		nextButton.setGraphic(nextpic);
 		nextButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -467,7 +411,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				if (page == 2) {
 					instruction3();
 				} else if (page == 3) {
@@ -502,9 +446,7 @@ public class GuiController {
 		});
 
 		Button prevButton = new Button();
-		ImageView prevpic = new ImageView("left.png");
-		prevpic.setFitWidth(54);
-		prevpic.setFitHeight(40);
+		ImageView prevpic = imageViewCreator("left.png",54,40);
 		prevButton.setGraphic(prevpic);
 		prevButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -513,7 +455,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				if (page == 2) {
 					instruction1();
 				} else if (page == 3) {
@@ -548,7 +490,7 @@ public class GuiController {
 		});
 
 		Button homeButton = new Button();
-		ImageView homepic = new ImageView("home.png");
+		ImageView homepic = imageViewCreator("home.png",45,45);
 		homepic.setFitWidth(45);
 		homepic.setFitHeight(45);
 		homeButton.setGraphic(homepic);
@@ -559,7 +501,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				welcome2();
 			}
 		});
@@ -600,9 +542,7 @@ public class GuiController {
 		// hBox.setPadding(new Insets(50));
 		StackPane stackPane = new StackPane();
 		Button nextButton = new Button();
-		ImageView nextpic = new ImageView("right.png");
-		nextpic.setFitWidth(54);
-		nextpic.setFitHeight(40);
+		ImageView nextpic = imageViewCreator("right.png",54,40);
 		nextButton.setGraphic(nextpic);
 		nextButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -611,7 +551,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				instruction2();
 			}
 		});
@@ -637,9 +577,7 @@ public class GuiController {
 		});
 
 		Button homeButton = new Button();
-		ImageView homepic = new ImageView("home.png");
-		homepic.setFitWidth(45);
-		homepic.setFitHeight(45);
+		ImageView homepic = imageViewCreator("home.png",45,45);
 		homeButton.setGraphic(homepic);
 		homeButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -648,7 +586,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				welcome2();
 			}
 		});
@@ -680,7 +618,7 @@ public class GuiController {
 		ImageView ins1 = new ImageView("Instruction1.png");
 		stackPane.getChildren().addAll(ins1, hBox);
 		root.getChildren().add(stackPane);
-		GuiController.root = root;
+		
 		return GuiController.root;
 	}
 
@@ -689,7 +627,6 @@ public class GuiController {
 		ImageView ins2 = new ImageView("Instruction2.png");
 		generateButtomBar(ins2, 2);
 
-		GuiController.root = root;
 		return GuiController.root;
 	}
 
@@ -698,7 +635,7 @@ public class GuiController {
 
 		ImageView ins3 = new ImageView("Instruction3.png");
 		generateButtomBar(ins3, 3);
-		GuiController.root = root;
+	
 		return GuiController.root;
 	}
 
@@ -706,7 +643,7 @@ public class GuiController {
 		root.getChildren().remove(0);
 		ImageView ins4 = new ImageView("Instruction4.png");
 		generateButtomBar(ins4, 4);
-		GuiController.root = root;
+
 		return GuiController.root;
 	}
 
@@ -714,7 +651,7 @@ public class GuiController {
 		root.getChildren().remove(0);
 		ImageView ins5 = new ImageView("Instruction5.png");
 		generateButtomBar(ins5, 5);
-		GuiController.root = root;
+
 		return GuiController.root;
 	}
 
@@ -726,9 +663,7 @@ public class GuiController {
 		// hBox.setPadding(new Insets(50));
 		StackPane stackPane = new StackPane();
 		Button prevButton = new Button();
-		ImageView prevpic = new ImageView("left.png");
-		prevpic.setFitWidth(54);
-		prevpic.setFitHeight(40);
+		ImageView prevpic = imageViewCreator("left.png",54,40);
 		prevButton.setGraphic(prevpic);
 		prevButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -737,7 +672,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				instruction5();
 			}
 		});
@@ -763,9 +698,7 @@ public class GuiController {
 		});
 
 		Button homeButton = new Button();
-		ImageView homepic = new ImageView("home.png");
-		homepic.setFitWidth(45);
-		homepic.setFitHeight(45);
+		ImageView homepic = imageViewCreator("home.png",45,45);
 		homeButton.setGraphic(homepic);
 		homeButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -774,7 +707,7 @@ public class GuiController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				click.play();
+				clickSound.play();
 				welcome2();
 			}
 		});
@@ -806,7 +739,7 @@ public class GuiController {
 		ImageView ins6 = new ImageView("Instruction6.png");
 		stackPane.getChildren().addAll(ins6, hBox);
 		root.getChildren().add(stackPane);
-		GuiController.root = root;
+		
 		return GuiController.root;
 	}
 }

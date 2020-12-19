@@ -1,6 +1,7 @@
 package logic;
 
 import gameController.GameController;
+import gui.GuiController;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -41,9 +42,7 @@ public abstract class DashBoard extends VBox {
 		setPlayerTurnText();
 
 		doneButton = new Button();
-		ImageView done = new ImageView("done.png");
-		done.setFitWidth(100);
-		done.setFitHeight(32);
+		ImageView done = GuiController.imageViewCreator("done.png",100,32);
 		doneButton.setGraphic(done);
 		doneButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -53,9 +52,7 @@ public abstract class DashBoard extends VBox {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView done = new ImageView("done.png");
-				done.setFitWidth(110);
-				done.setFitHeight(35);
+				ImageView done = GuiController.imageViewCreator("done.png",110,35);
 				doneButton.setGraphic(done);
 			}
 		});
@@ -65,9 +62,7 @@ public abstract class DashBoard extends VBox {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView done = new ImageView("done.png");
-				done.setFitWidth(100);
-				done.setFitHeight(32);
+				ImageView done = GuiController.imageViewCreator("done.png",100,32);
 				doneButton.setGraphic(done);
 			}
 		});

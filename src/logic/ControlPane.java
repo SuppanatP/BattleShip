@@ -38,9 +38,7 @@ public class ControlPane extends DashBoard {
 		setPrefWidth(300);
 
 		clearButton = new Button();
-		ImageView clear = new ImageView("clear.png");
-		clear.setFitWidth(100);
-		clear.setFitHeight(32);
+		ImageView clear = GuiController.imageViewCreator("clear.png",100,32);
 		clearButton.setGraphic(clear);
 		clearButton.setBackground(
 				new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(10), Insets.EMPTY)));
@@ -131,9 +129,7 @@ public class ControlPane extends DashBoard {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView clear = new ImageView("clear.png");
-				clear.setFitWidth(110);
-				clear.setFitHeight(35);
+				ImageView clear = GuiController.imageViewCreator("clear.png",110,35);
 				clearButton.setGraphic(clear);
 			}
 		});
@@ -143,9 +139,7 @@ public class ControlPane extends DashBoard {
 			@Override
 			public void handle(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				ImageView clear = new ImageView("clear.png");
-				clear.setFitWidth(100);
-				clear.setFitHeight(32);
+				ImageView clear = GuiController.imageViewCreator("clear.png",100,32);
 				clearButton.setGraphic(clear);
 			}
 		});

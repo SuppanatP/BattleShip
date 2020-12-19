@@ -3,196 +3,187 @@
   realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="gameController.GameController" project="BattleShipProject" 
     file="/BattleShipProject/src/gameController/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="165" y="135"/>    
+    <position height="-1" width="-1" x="146" y="227"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="gui.GuiController" project="BattleShipProject" 
-    file="/BattleShipProject/src/gui/GuiController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="401" y="-92"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="3" language="java" name="logic.Clickable" project="BattleShipProject" 
+  <interface id="2" language="java" name="logic.Clickable" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/Clickable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="380" y="199"/>    
+    <position height="-1" width="-1" x="1241" y="-110"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="4" language="java" name="logic.ControlPane" project="BattleShipProject" 
+  <class id="3" language="java" name="logic.ControlPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/ControlPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1023" y="162"/>    
+    <position height="-1" width="-1" x="429" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="logic.DashBoard" project="BattleShipProject" 
+  <class id="4" language="java" name="logic.DashBoard" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/DashBoard.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="144" x="1121" y="-144"/>    
+    <position height="-1" width="-1" x="554" y="-116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="logic.DisplayPane" project="BattleShipProject" 
+  <class id="5" language="java" name="logic.DisplayPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/DisplayPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1285" y="114"/>    
+    <position height="-1" width="-1" x="627" y="39"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="logic.MyCell" project="BattleShipProject" 
+  <class id="6" language="java" name="logic.MyCell" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/MyCell.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="886" y="342"/>    
+    <position height="-1" width="-1" x="841" y="113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="logic.MyPane" project="BattleShipProject" 
+  <class id="7" language="java" name="logic.MyPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/MyPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="876" y="-126"/>    
+    <position height="117" width="148" x="432" y="419"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="logic.PlayCell" project="BattleShipProject" 
+  <class id="8" language="java" name="logic.PlayCell" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/PlayCell.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="614" y="381"/>    
+    <position height="-1" width="-1" x="1021" y="121"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="logic.PlayPane" project="BattleShipProject" 
+  <class id="9" language="java" name="logic.PlayPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/PlayPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1030" y="-132"/>    
+    <position height="-1" width="-1" x="676" y="465"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="logic.SetupCell" project="BattleShipProject" 
+  <class id="10" language="java" name="logic.SetupCell" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/SetupCell.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="435" y="386"/>    
+    <position height="-1" width="-1" x="1217" y="115"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="logic.SetupPane" project="BattleShipProject" 
+  <class id="11" language="java" name="logic.SetupPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/SetupPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="663" y="-102"/>    
+    <position height="-1" width="-1" x="892" y="507"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="logic.Ship" project="BattleShipProject" 
+  <class id="12" language="java" name="logic.Ship" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1380" y="-100"/>    
+    <position height="-1" width="-1" x="1141" y="370"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="logic.ShipButton" project="BattleShipProject" 
+  <class id="13" language="java" name="logic.ShipButton" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/ShipButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1358" y="299"/>    
+    <position height="-1" width="-1" x="1316" y="367"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="logic.ShipCell" project="BattleShipProject" 
+  <class id="14" language="java" name="logic.ShipCell" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/ShipCell.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="672" y="146"/>    
+    <position height="-1" width="-1" x="1020" y="-108"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="logic.ShipPane" project="BattleShipProject" 
+  <class id="15" language="java" name="logic.ShipPane" project="BattleShipProject" 
     file="/BattleShipProject/src/logic/ShipPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="836" y="-275"/>    
+    <position height="81" width="87" x="610" y="265"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="main.Main" project="BattleShipProject" 
+  <class id="16" language="java" name="main.Main" project="BattleShipProject" 
     file="/BattleShipProject/src/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1207" y="-244"/>    
+    <position height="-1" width="-1" x="786" y="-128"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="18">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="7"/>    
+  <generalization id="17">    
+    <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
+  <generalization id="18">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="19">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
   <generalization id="20">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="16"/>  
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
   <generalization id="21">    
-    <end type="SOURCE" refId="9"/>    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
   <realization id="22">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
   </realization>  
   <generalization id="23">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <realization id="24">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="3"/>  
-  </realization>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="11"/>    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
-  <generalization id="26">    
+  <realization id="24">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="16"/>  
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

@@ -12,7 +12,7 @@ public class PlayCell extends ShipCell implements Clickable {
 	public PlayCell(int i, int j) {
 		super(i, j);
 		// TODO Auto-generated constructor stub
-		isFilled = false;
+		//isFilled = false;
 		isFired = false;
 		setColor(Color.TOMATO);
 
@@ -30,7 +30,7 @@ public class PlayCell extends ShipCell implements Clickable {
 			@Override
 			public void handle(MouseEvent e) {
 				// TODO fill in this method
-				if (!isFired) {
+				if (!isFired && !GameController.isClicked) {
 					onEnterHandler();
 				}
 			}
@@ -39,7 +39,7 @@ public class PlayCell extends ShipCell implements Clickable {
 			@Override
 			public void handle(MouseEvent e) {
 				// TODO fill in this method
-				if (!isFired) {
+				if (!isFired && !GameController.isClicked) {
 					onExitHandler();
 				}
 			}
@@ -49,20 +49,18 @@ public class PlayCell extends ShipCell implements Clickable {
 	@Override
 	public void onClickHandler() {
 		// TODO Auto-generated method stub
+		isFired = true;
+		GameController.isClicked = true;
 		
 		if (isFilled)
 			setColor(Color.DARKRED);
 		else
 			setColor(Color.STEELBLUE);
-		isFired = true;
+		
 		if (GameController.isPlayer1()) {
-			GameController.isClicked = true;
 			GameController.setCellFired(false, row, column);
-
 		} else {
-			GameController.isClicked = true;
 			GameController.setCellFired(true, row, column);
-
 		}
 	}
 

@@ -1,5 +1,6 @@
 package logic;
 
+import gui.GuiController;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -25,9 +26,7 @@ public class ShipButton extends Button {
 		this.ship = ship;
 		this.isPlaced = false;
 		
-		ImageView shipPic = new ImageView(ship.getUrl());
-		shipPic.setFitHeight(50);
-		shipPic.setFitWidth(250);
+		ImageView shipPic = GuiController.imageViewCreator(ship.getUrl(),250,50);
 		setGraphic(shipPic);
 		this.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, new CornerRadii(10), Insets.EMPTY)));
 		this.setBorder(new Border(

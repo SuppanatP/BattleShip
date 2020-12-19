@@ -43,7 +43,7 @@ public class SetupCell extends ShipCell implements Clickable{
 			Ship selectedShip = GameController.getSelectedShipButton().getShip();
 			boolean isFillable = GameController.isFillable(selectedShip, row, column);
 			if (isFillable) {
-				click.play();
+				clickSound.play();
 				GameController.fillCells(row, column, GameController.getIsShipButtonHorizontal(),
 						selectedShip.getSize());
 				GameController.placeShip();

@@ -18,20 +18,20 @@ public abstract class ShipCell extends Pane {
 
 	protected int row, column;
 	protected boolean isFilled;
-	protected Boolean[][] cellIsFilled = new Boolean[8][8];
-	protected AudioClip click,bomb,water;
+	//protected Boolean[][] cellIsFilled = new Boolean[8][8];
+	protected AudioClip clickSound,bombSound,waterSound;
 
 	public ShipCell(int i, int j) {
 		// TODO Auto-generated constructor stub
-		AudioClip click = new AudioClip(ClassLoader.getSystemResource("PaneActionSound.mp3").toString());
-		click.setVolume(0.25);
-		this.click = click;
-		AudioClip bomb = new AudioClip(ClassLoader.getSystemResource("bombSound.mp3").toString());
-		bomb.setVolume(0.5);
-		this.bomb = bomb;
-		AudioClip water = new AudioClip(ClassLoader.getSystemResource("WaterSound.mp3").toString());
-		water.setVolume(0.5);
-		this.water = water;
+		AudioClip clickSound = new AudioClip(ClassLoader.getSystemResource("PaneActionSound.mp3").toString());
+		clickSound.setVolume(0.25);
+		this.clickSound = clickSound;
+		AudioClip bombSound = new AudioClip(ClassLoader.getSystemResource("bombSound.mp3").toString());
+		bombSound.setVolume(0.5);
+		this.bombSound = bombSound;
+		AudioClip waterSound = new AudioClip(ClassLoader.getSystemResource("WaterSound.mp3").toString());
+		waterSound.setVolume(0.5);
+		this.waterSound = waterSound;
 		
 		setPrefWidth(50);
 		setPrefHeight(50);
@@ -39,14 +39,14 @@ public abstract class ShipCell extends Pane {
 		setMinHeight(50);
 		setPadding(new Insets(3));
 		
-		this.row = i;
-		this.column = j;
+		row = i;
+		column = j;
 		
-		this.setBorder(new Border(
+		setBorder(new Border(
 				new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY,new BorderWidths(0.6))));
 
 		setColor(Color.STEELBLUE);
-		this.isFilled = false;
+		isFilled = false;
 
 		
 	}

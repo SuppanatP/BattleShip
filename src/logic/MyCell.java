@@ -14,7 +14,7 @@ public class MyCell extends ShipCell {
 
 	public MyCell(int i, int j) {
 		super(i, j);
-		this.isFired = false;
+		isFired = false;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -27,9 +27,9 @@ public class MyCell extends ShipCell {
 	}
 	
 	public void setFired() {
-		this.isFired = true;
+		isFired = true;
 		if(isFilled) {
-			bomb.play();
+			bombSound.play();
 			if(GameController.isPlayer1()) {
 				GameController.setCount2(GameController.getCount2()+1);
 			}else {
@@ -40,7 +40,7 @@ public class MyCell extends ShipCell {
 			}
 			setColor(Color.DARKRED);
 		}else {
-			water.play();
+			waterSound.play();
 			setColor(Color.TEAL);
 		}
 	}
